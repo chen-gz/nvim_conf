@@ -16,7 +16,7 @@ use {
                 -- the default case_mode is "smart_case"
             }
         }
-        telescope.load_extension('fzf')
+        --telescope.load_extension('fzf')
     end
 
 }
