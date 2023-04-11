@@ -11,3 +11,11 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true 
 
  vim.api.nvim_set_keymap('n', 'ff', "<cmd>lua require('telescope.builtin').find_files()<CR>",
     { noremap = true, silent = true });
+
+-- for buffer switch
+vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', { noremap = true, silent = true });
+vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', { noremap = true, silent = true });
+-- save file
+vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true });
+-- q to quit
+vim.api.nvim_set_keymap('n', 'q', ':q<CR>', { noremap = true, silent = true });

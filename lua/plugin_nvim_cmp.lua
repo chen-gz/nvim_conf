@@ -3,12 +3,16 @@ local use = require('packer').use
 use {
     'hrsh7th/nvim-cmp',
     requires = {
-        --'hrsh7th/cmp-nvim-lsp',
+
+        -- require lspconfig
+        'neovim/nvim-lspconfig',
+        'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
         --'hrsh7th/cmp-vsnip',
         --'hrsh7th/vim-vsnip',
+
         opt = true,
     },
     config = function()
@@ -73,11 +77,11 @@ use {
         })
 
         -- Set up lspconfig.
-        --local capabilities = require('cmp_nvim_lsp').default_capabilities()
+        local capabilities = require('cmp_nvim_lsp').default_capabilities()
         -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-        --require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-        --    capabilities = capabilities
-        --}
+        require('lspconfig')['clangd'].setup {
+            capabilities = capabilities
+        }
 
 
     end

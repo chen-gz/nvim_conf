@@ -3,6 +3,7 @@ local use = require('packer').use
 use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+
     config = require('lualine').setup {
         options = {
             icons_enabled = true,
@@ -26,7 +27,7 @@ use {
             lualine_a = {'mode'},
             lualine_b = {'branch', 'diff', 'diagnostics'},
             lualine_c = {'filename'},
-            lualine_x = {'encoding', 'fileformat', 'filetype'},
+            lualine_x = {'encoding', 'fileformat','filetype'},
             lualine_y = {'progress'},
             lualine_z = {'location'}
         },
@@ -38,8 +39,13 @@ use {
             lualine_y = {},
             lualine_z = {}
         },
-        tabline = {},
-        winbar = {},
+
+        tabline = {
+            lualine_a = {'buffers'},
+        },
+        winbar = {
+            --lualine_c = {'filename'},
+        },
         inactive_winbar = {},
         extensions = {}
     }
@@ -71,9 +77,6 @@ use {
 --            lualine_x = {'encoding', 'fileformat', 'filetype'},
 --            lualine_y = {'progress'},
 --            lualine_z = {'location'}
---        },
---        tabline = {
---            lualine_a = {'buffers'},
 --        },
 --        extensions = {}
 --    }

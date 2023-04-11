@@ -4,7 +4,6 @@ local vim               = vim
 -- options
 
 vim.g.mapleader = " "
-
 require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 end)
@@ -24,3 +23,6 @@ require('plugin_telescope')
 require('plugin_treesitter')
 --require('plugin_copilot')
 require('plugin_nvim_cmp')
+require('plugin_format')
+require('plugin_indentline')
+
