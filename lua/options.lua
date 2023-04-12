@@ -45,4 +45,3 @@ vim.o["encoding"]       = "utf-8"
 vim.o["wildignorecase"] = true
 vim.o["wildignore"]     = ".git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**"
 vim.o['signcolumn']     = "yes"
-vim.cmd("colorscheme catppuccin")

@@ -26,3 +26,4 @@ require('plugin_nvim_cmp')
 require('plugin_format')
 require('plugin_indentline')
 
+require('plugin_theme')

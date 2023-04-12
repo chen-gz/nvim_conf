@@ -2,8 +2,7 @@ local use = require('packer').use
 
 use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-
+    requires = { 'kyazdani42/nvim-web-devicons', opt = false },
     config = require('lualine').setup {
         options = {
             icons_enabled = true,
