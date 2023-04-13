@@ -18,6 +18,15 @@ use {
                 python = {
                     require('formatter.filetypes.python').autopep8,
                 },
+                go = {
+                    function()
+                        return {
+                            exe = "gofmt",
+                            args = {"-s"},
+                            stdin = true
+                        }
+                    end
+                },
 
             }
         }
