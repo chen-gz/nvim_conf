@@ -1,9 +1,14 @@
 local use = require('packer').use
+ use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+}
 use {
     'nvim-telescope/telescope.nvim',
     requires = {
         'nvim-lua/plenary.nvim',
-        'nvim-lua/popup.nvim'
+        'nvim-lua/popup.nvim',
+        -- 'nvim-telescope/telescope-fzf-native.nvim'
     },
     config = function ()
         local telescope = require('telescope');
@@ -16,7 +21,7 @@ use {
                 -- the default case_mode is "smart_case"
             }
         }
-        --telescope.load_extension('fzf')
+        telescope.load_extension('fzf')
     end
 
 }
