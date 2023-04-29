@@ -9,8 +9,8 @@ vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true });
 vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true });
 
- vim.api.nvim_set_keymap('n', 'ff', "<cmd>lua require('telescope.builtin').find_files()<CR>",
-    { noremap = true, silent = true });
+ vim.api.nvim_set_keymap('n', 'ff', "<cmd>lua require('telescope.builtin').find_files()<CR>",{ noremap = true, silent = true });
+ vim.api.nvim_set_keymap('n', 'fw', "<cmd>lua require('telescope.builtin').live_grep()<CR>",{ noremap = true, silent = true });
 
 -- for buffer switch
 vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', { noremap = true, silent = true });
