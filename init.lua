@@ -13,6 +13,10 @@ local use = require('packer').use
 -- set leader to space
 vim.g.mapleader = ' '
 
+-- use {
+--     'neovim/nvim-lspconfig',
+-- }
+-- require'lspconfig'.rust_analyzer.setup{}
 
 require('keymap')
 require('plugin')
@@ -31,40 +35,20 @@ require('plugin_toggleterm')
 require('plugin_knap') -- for latex
 
 
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 use {
     'nvim-tree/nvim-tree.lua',
     config = function()
         require("nvim-tree").setup()
-
     end
 }
- vim.api.nvim_set_keymap('n', '<leader>n', "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true });
- vim.api.nvim_set_keymap('n', '<leader>nf', "<cmd>NvimTreeFindFile<CR>", { noremap = true, silent = true });
- vim.g.nvim_tree_auto_open = 1
+vim.api.nvim_set_keymap('n', '<leader>n', "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true });
+vim.api.nvim_set_keymap('n', '<leader>nf', "<cmd>NvimTreeFindFile<CR>", { noremap = true, silent = true });
+vim.g.nvim_tree_auto_open = 1
 
--- require('sidebar-nvim/sidebar.nvim')
---use {
-    --    'sidebar-nvim/sidebar.nvim',
-    --    config = function()
-        --        local sidebar = require("sidebar-nvim")
-        --        local opts = {
-            --            open = true,
-            --            files = {
-                --                icon = "",
-                --                show_hidden = false,
-                --                ignored_paths = {"%.git$"}
-                --            },
-                --            sections = {
-                    --                "datetime",
-                    --                "files",
-                    --                --"git-status",
-                    --                --"lsp-diagnostics",
-                    --                -- "nvim-tree"
-                    --            },
-                    --        }
-                    --        sidebar.setup(opts)
-                    --    end
-                    --}
-                    --
+vim.g.copilot_filetypes = {
+	yaml = true,
+}
+

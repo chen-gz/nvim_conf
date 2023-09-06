@@ -1,4 +1,4 @@
-vim.o["number"]         = true -- show line numbers
+vim.o["number"]         = true -- show line numbersop
 vim.o["relativenumber"] = true -- show relative line numbers
 vim.o["list"]           = true -- show invisible characters
 vim.o["listchars"]      = "tab:»·,trail:·,nbsp:·,extends:»,precedes:«"
@@ -7,6 +7,7 @@ vim.o["tabstop"]        = 4 -- number of visual spaces per TAB
 vim.o["shiftwidth"]     = 4 -- number of spaces to use for autoindent
 vim.o["smarttab"]       = true
 vim.o["wrap"]           = true -- wrap lines
+vim.o["linebreak"]      = true -- wrap lines at convenient points
 vim.o["showbreak"]      = "↪" -- "↳"
 vim.o["laststatus"]     = 2 -- always show status line
 vim.o["display"]        = "lastline" -- show last line of file
@@ -30,7 +31,7 @@ vim.o["scrolloff"]      = 8 -- lines of content to keep above and below cursor
 vim.o["autoread"]       = true -- automatically reload files when changed
 vim.cmd("au FocusGained * :checktime")
 vim.o["autowrite"]      = true -- automatically save before commands like :next and :make
-vim.o["cmdheight"]      = 1 -- height of command bar
+vim.o["cmdheight"]      = 0 -- height of command bar
 vim.o["termguicolors"]  = true -- enable 24-bit RGB colors
 vim.o["conceallevel"]   = 0
 vim.o["foldlevelstart"] = 99

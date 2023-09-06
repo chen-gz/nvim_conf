@@ -27,3 +27,9 @@ SVM
 2D
 GAN
 perceptron
+datetime
+ICA
+variational
+PatchGAN
+Wasserstein
+autoencoder
