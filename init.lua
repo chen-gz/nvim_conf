@@ -13,10 +13,6 @@ local use = require('packer').use
 -- set leader to space
 vim.g.mapleader = ' '
 
--- use {
---     'neovim/nvim-lspconfig',
--- }
--- require'lspconfig'.rust_analyzer.setup{}
 
 require('keymap')
 require('plugin')
@@ -35,13 +31,13 @@ require('plugin_toggleterm')
 require('plugin_knap') -- for latex
 
 
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 use {
     'nvim-tree/nvim-tree.lua',
     config = function()
         require("nvim-tree").setup()
+
     end
 }
 vim.api.nvim_set_keymap('n', '<leader>n', "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true });

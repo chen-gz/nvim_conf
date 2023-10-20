@@ -15,6 +15,14 @@ use {
                         }
                     end
                 },
+                cpp= {
+                    function()
+                        return {
+                            exe = "clang-format",
+                            stdin = true
+                        }
+                    end
+                },
                 python = {
                     require('formatter.filetypes.python').autopep8,
                 },

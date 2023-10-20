@@ -84,6 +84,10 @@ use {
         require('lspconfig')['rust_analyzer'].setup {
             capabilities = capabilities
         }
+        -- add for golang 
+        require('lspconfig')['gopls'].setup {
+            capabilities = capabilities
+        }
 
 
     end
