@@ -26,6 +26,9 @@ vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = 
 -- use q to close tab
 vim.api.nvim_set_keymap('n', 'q', ':q<CR>', { noremap = true, silent = true });
 
+-- map 'folder and unfold' to <space>z
+vim.api.nvim_set_keymap('n', '<space><space>', 'za', { noremap = true, silent = true });
+-- vim.api.nvim_set_keymap('n', '<C-,>', 'za', { noremap = true, silent = true });
 vim.api.nvim_create_autocmd('LspAttach', {
  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
  callback = function(ev)
