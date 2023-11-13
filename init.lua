@@ -50,7 +50,7 @@ vim.g.copilot_filetypes = {
 
 use {
     'nvim-tree/nvim-web-devicons',
-    require'nvim-web-devicons'.setup {
+    config = require'nvim-web-devicons'.setup {
         -- your personnal icons can go here (to override)
         -- you can specify color or cterm_color instead of specifying both of them
         -- DevIcon will be appended to `name`
