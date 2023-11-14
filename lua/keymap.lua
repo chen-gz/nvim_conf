@@ -23,8 +23,40 @@ vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>', { noremap = true, silent = 
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true });
 -- 
 --
--- use q to close tab
-vim.api.nvim_set_keymap('n', 'q', ':q<CR>', { noremap = true, silent = true });
+-- if not the last buffer, use `q` to close buffer; if the last buffer, use `q` to quit
+-- vim.api.nvim_set_keymap('n', 'q', ':bw<CR>', { noremap = true, silent = true });
+
+-- Function to check if the current buffer is the last buffer
+local function is_last_buffer()
+  local loaded_buffers = 0
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.api.nvim_buf_is_loaded(buf) and vim.api.nvim_buf_get_option(buf, 'buflisted') then
+      loaded_buffers = loaded_buffers + 1
+      if loaded_buffers > 1 then
+        return false
+      end
+    end
+  end
+  return loaded_buffers == 1
+end
+
+-- Key mapping for 'q'
+vim.api.nvim_set_keymap('n', 'q', '', {
+  noremap = true,
+  silent = true,
+  callback = function()
+    if is_last_buffer() then
+      -- If it's the last buffer, quit NeoVim
+      -- before quit close neotree
+        vim.cmd('Neotree close')
+      vim.cmd('quit')
+    else
+      -- Otherwise, close the current buffer
+      vim.cmd('bw')
+    end
+  end
+})
+
 
 -- map 'folder and unfold' to <space>z
 vim.api.nvim_set_keymap('n', '<space><space>', 'za', { noremap = true, silent = true });
@@ -59,3 +91,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
  end,
 })
+
+-- map c-w to close buffer
+-- vim.api.nvim_set_keymap('n', '<C-w>', ':bw<CR>', { noremap = true, silent = true });

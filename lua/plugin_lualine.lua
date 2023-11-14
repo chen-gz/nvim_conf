@@ -1,8 +1,4 @@
-local use = require('packer').use
-
-use {
-    'nvim-lualine/lualine.nvim',
-    config = require('lualine').setup {
+return function () require('lualine').setup {
         options = {
             icons_enabled = true,
             theme = 'catppuccin',
@@ -21,28 +17,28 @@ use {
                 winbar = 1000,
             }
         },
-        sections = {
-            lualine_a = {'mode'},
-            lualine_b = {'branch', 'diff', 'diagnostics'},
-            lualine_c = {'filename'},
-            lualine_x = {'encoding', 'fileformat',{
-                'filetype',
-                fmt = function(str)
-                    local icon = require('nvim-web-devicons')
-                    if not icon.get_icon(vim.fn.expand('%:t'), vim.bo.filetype) then
-                        -- or if you have the latest version of nvim-web-devicon
-                        -- and don't care about buffer names
-                        -- if not icon.get_icon_by_filetype(vim.bo.filetype) then
-                        return nil
-                    end
+        -- sections = {
+        --     lualine_a = {'mode'},
+        --     lualine_b = {'branch', 'diff', 'diagnostics'},
+        --     lualine_c = {'filename'},
+        --     lualine_x = {'encoding', 'fileformat',{
+        --         'filetype',
+        --         fmt = function(str)
+        --             local icon = require('nvim-web-devicons')
+        --             if not icon.get_icon(vim.fn.expand('%:t'), vim.bo.filetype) then
+        --                 -- or if you have the latest version of nvim-web-devicon
+        --                 -- and don't care about buffer names
+        --                 -- if not icon.get_icon_by_filetype(vim.bo.filetype) then
+        --                 return nil
+        --             end
 
-                    return str
-                end,
-                icon_only = true,
-            }},
-            lualine_y = {'progress'},
-            lualine_z = {'location'}
-        },
+        --             return str
+        --         end,
+        --         icon_only = true,
+        --     }},
+        --     lualine_y = {'progress'},
+        --     lualine_z = {'location'}
+        -- },
         inactive_sections = {
             lualine_a = {},
             lualine_b = {},
@@ -61,6 +57,6 @@ use {
         inactive_winbar = {},
         extensions = {}
     }
-}
 
 
+end
