@@ -1,1 +1,2 @@
-Execute nvim +PackerSync to install the plugins
+migrate to lazy.vim.
+download files to  ~/.config/nvim.
