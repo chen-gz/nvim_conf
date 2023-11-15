@@ -45,7 +45,7 @@ local function is_last_buffer()
 end
 
 -- Key mapping for 'q'
-vim.api.nvim_set_keymap('n', 'q', '', {
+vim.api.nvim_set_keymap('n', 'q', 't', {
   noremap = true,
   silent = true,
   callback = function()
