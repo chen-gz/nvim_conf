@@ -84,18 +84,18 @@ local neo_tree =
     lazy = false,
     
     config = function() 
-        vim.cmd("Neotree show")
+        -- vim.cmd("Neotree show")
         -- auto close if no buffer is open
         vim.cmd("autocmd BufEnter * if (winnr('$') == 1 && exists('b:neo_tree') && b:neo_tree.win_open()) | q | endif")
-        -- filesystem = {
-        --     follow_current_file = {enable = false},
-        -- }
-        -- buffers ={
-        --     follow_current_file = {enable = true},
-        -- }
+        -- set width to 30%
+        filesystem = {
+            follow_current_file = {enable = false},
+        }
+        buffers ={
+            follow_current_file = {enable = false},
+        }
 
     end
-    
 
 }
 
@@ -112,12 +112,7 @@ local knap = {
             textopdfforwardjump = "zathura --synctex-forward=%line%:%column%:%srcfile% %outputfile%",
             delay=0
         }
-
-
     end,
-
-
-
 }
 
 
@@ -148,7 +143,7 @@ require("lazy").setup({
             "nvim-telescope/telescope.nvim",
         },
         opts = {
-            manual_mode = false,
+            manual_mode = true,
         },
         -- event = "VeryLazy",
         config = function(_, opts)
@@ -159,10 +154,12 @@ require("lazy").setup({
         end,
         keys = {
             { "<leader>fp", "<Cmd>Telescope projects<CR>", desc = "Projects" },
+            -- add project
+            { "<leader>fa", "<Cmd>lua require('project_nvim.project'). add_project_manually()<CR>", desc = "add project"},
+
+
         },
         lazy = false,
-        
     }
-
 })
 
