@@ -26,3 +26,32 @@ vim.keymap.set("i", "<F5>", function()
     print("Makefile not found!")
   end
 end, { noremap = true, silent = true })
+local function is_last_buffer()
+  local loaded_buffers = 0
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.api.nvim_buf_is_loaded(buf) and vim.api.nvim_buf_get_option(buf, "buflisted") then
+      loaded_buffers = loaded_buffers + 1
+      if loaded_buffers > 1 then
+        return false
+      end
+    end
+  end
+  return loaded_buffers == 1
+end
+
+-- Key mapping for 'q'
+vim.api.nvim_set_keymap("n", "q", "t", {
+  noremap = true,
+  silent = true,
+  callback = function()
+    if is_last_buffer() then
+      -- If it's the last buffer, quit NeoVim
+      -- before quit close neotree
+      vim.cmd("Neotree close")
+      vim.cmd("quit")
+    else
+      -- Otherwise, close the current buffer
+      vim.cmd("bw")
+    end
+  end,
+})
