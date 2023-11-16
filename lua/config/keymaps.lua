@@ -11,3 +11,18 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "kk", "<Esc>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<F5>", function()
+  if vim.fn.filereadable("Makefile") == 1 then
+    vim.cmd("make!")
+  else
+    print("Makefile not found!")
+  end
+end, { noremap = true, silent = true })
+vim.keymap.set("i", "<F5>", function()
+  if vim.fn.filereadable("Makefile") == 1 then
+    vim.cmd("make!")
+  else
+    print("Makefile not found!")
+  end
+end, { noremap = true, silent = true })
