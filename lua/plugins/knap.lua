@@ -16,6 +16,13 @@ return {
         '<cmd>lua require("knap").toggle_autopreviewing()<CR>',
         { noremap = true, silent = true }
       )
+      vim.api.nvim_set_keymap(
+        "n",
+        "<F6>",
+        '<cmd>lua require("knap").forward_jump()<CR>',
+        { noremap = true, silent = true }
+      )
+
       vim.o.wrap = true
     end,
     -- set word warp == true

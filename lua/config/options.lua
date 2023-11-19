@@ -7,3 +7,6 @@ vim.o.guifont = "Source Code Pro:h21" -- text below applies for VimScript
 -- set tab size to 4 spaces
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
+-- disable mouse
+vim.o.mouse = ""
+vim.o.ttymouse = ""
