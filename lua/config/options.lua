@@ -12,3 +12,4 @@ vim.o.shiftwidth = 4
 -- disable mouse
 vim.o.mouse = ""
 vim.o.ttymouse = ""
+vim.g.neovide_transparency = 0.99
