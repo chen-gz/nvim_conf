@@ -24,17 +24,17 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 --   end,
 -- })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.tex" },
-  callback = function()
-    -- Save the current view state
-    local saved_view = vim.fn.winsaveview()
-
-    -- Set the text width and format the text
-    vim.opt_local.textwidth = 80
-    vim.cmd("normal gggqG")
-
-    -- Restore the view state
-    vim.fn.winrestview(saved_view)
-  end,
-})
+--vim.api.nvim_create_autocmd("BufWritePre", {
+--  pattern = { "*.tex" },
+--  callback = function()
+--    -- Save the current view state
+--    local saved_view = vim.fn.winsaveview()
+--
+--    -- Set the text width and format the text
+--    vim.opt_local.textwidth = 80
+--    vim.cmd("normal gggqG")
+--
+--    -- Restore the view state
+--    vim.fn.winrestview(saved_view)
+--  end,
+--})
