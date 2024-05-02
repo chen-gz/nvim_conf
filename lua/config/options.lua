@@ -5,7 +5,7 @@
 vim.o["virtualedit"] = "all"
 -- vim.o.guifont = "Source Code Pro:h21" -- text below applies for VimScript
 -- vim.o.guifont = ":h21" -- text below applies for VimScript
-vim.o.guifont = "JetBrainsmono Nerd Font:h18"
+vim.o.guifont = "JetBrainsmono Nerd Font:h14"
 -- set tab size to 4 spaces
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
