@@ -54,6 +54,7 @@ vim.api.nvim_set_keymap("n", "q", "t", {
     else
       -- Otherwise, close the current buffer
       vim.cmd("bw")
+      vim.cmd("blast")
     end
   end,
 })
