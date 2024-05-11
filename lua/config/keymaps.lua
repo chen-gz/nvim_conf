@@ -1,7 +1,8 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
---
+-- mapping the command key as control key in macos 
+
 -- add keymaAp
 vim.api.nvim_set_keymap(
   "n",
@@ -49,7 +50,7 @@ vim.api.nvim_set_keymap("n", "q", "t", {
     if is_last_buffer() then
       -- If it's the last buffer, quit NeoVim
       -- before quit close neotree
-      vim.cmd("Neotree close")
+      -- vim.cmd("Neotree close")
       vim.cmd("quit")
     else
       -- Otherwise, close the current buffer

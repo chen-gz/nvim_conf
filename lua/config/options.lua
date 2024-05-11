@@ -2,7 +2,8 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 -- allow cursor move to everywhere in normal mode
-vim.o["virtualedit"] = "all"
+-- vim.o["virtualedit"] = "all"
+vim.o.virtualedit = "all"
 -- vim.o.guifont = "Source Code Pro:h21" -- text below applies for VimScript
 -- vim.o.guifont = ":h21" -- text below applies for VimScript
 vim.o.guifont = "JetBrainsmono Nerd Font:h14"
@@ -13,12 +14,31 @@ vim.o.shiftwidth = 4
 vim.o.mouse = ""
 --vim.o.ttymouse = ""
 -- set width
-vim.o.textwidth = 80
-vim.o.colorcolumn = "80"
+vim.o.textwidth = 120
+vim.o.colorcolumn = "120"
+vim.o.number = true
 -- vim.g.neovide_transparency = 0.99
 --
 ---- LSP Server to use for Python.
 -- Set to "basedpyright" to use basedpyright instead of pyright.
-vim.g.lazyvim_python_lsp = "pylsp"
-vim.g.lazyvim_python_ruff = "ruff_lsp"
+-- vim.g.lazyvim_python_lsp = "pylsp"
+-- vim.g.lazyvim_python_ruff = "ruff_lsp"
 vim.g.autoformat = false
+-- Example using a list of specs with the default options
+--
+-- allow scrolling past the end of the file
+vim.o.scrolloff = 10
+vim.o.display = vim.o.display .. ",lastline"
+-- clipboard
+vim.o.clipboard = "unnamedplus"
+-- relative line numbers
+vim.wo.relativenumber = true
+-- prevent auto commenting new lines
+vim.cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
+-- formatoptions -= "cro"
+--
+-- vim.o.formatoptions = vim.o.formatoptions:gsub("cro", "")
+-- no last line  (height = 0)
+-- vim.o.laststatus = 1
+vim.o.cmdheight = 0
+
