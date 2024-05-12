@@ -1,6 +1,11 @@
 return {
   "j-hui/fidget.nvim",
   opts = {
-    -- options
+	  notification = {
+		  window = {
+			  max_width = 40,
+			  max_height = 10,
+		  },
+	  },
   },
 }
