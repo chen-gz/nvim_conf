@@ -29,6 +29,8 @@ vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>", { noremap = true, silent = 
 vim.api.nvim_set_keymap("n", "<leader>t", "<Cmd>lua require('toggleterm').toggle()<CR>", { noremap = true, silent = true })
  -- esc go to normal mode in terminal
 -- vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true });
+-- map <C-q> to close all buffer
+vim.api.nvim_set_keymap("n", "<C-q>", ":bufdo bd<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<F5>", function()
   if vim.fn.filereadable("Makefile") == 1 then
