@@ -14,6 +14,21 @@ vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "kk", "<Esc>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("t", "jj", "<Esc>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("t", "kk", "<Esc>", { noremap = true, silent = true })
+-- map j gj
+vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
+-- map <c-s> o save
+vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>", { noremap = true, silent = true })
+
+-- toggle terminal
+vim.api.nvim_set_keymap("n", "<leader>t", "<Cmd>lua require('toggleterm').toggle()<CR>", { noremap = true, silent = true })
+ -- esc go to normal mode in terminal
+-- vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true });
 
 vim.keymap.set("n", "<F5>", function()
   if vim.fn.filereadable("Makefile") == 1 then

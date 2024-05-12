@@ -16,6 +16,13 @@ return {
 			desc = "Telescope find files",
 		},
 		{
+		    "<leader><space>",
+			function() 
+				require('telescope.builtin').find_files()
+			end,
+			desc = "Telescope find files",
+		},
+		{
 			"<leader>fg",
 			function() 
 				require('telescope.builtin').live_grep()

@@ -42,3 +42,5 @@ vim.cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 -- vim.o.laststatus = 1
 vim.o.cmdheight = 0
 
+-- word wrap on 120 or edge of window
+vim.opt.wrap = true
