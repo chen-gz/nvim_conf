@@ -14,8 +14,8 @@ vim.o.shiftwidth = 4
 vim.o.mouse = ""
 --vim.o.ttymouse = ""
 -- set width
-vim.o.textwidth = 120
-vim.o.colorcolumn = "120"
+vim.o.textwidth = 80
+vim.o.colorcolumn = "80"
 vim.o.number = true
 -- vim.g.neovide_transparency = 0.99
 --
