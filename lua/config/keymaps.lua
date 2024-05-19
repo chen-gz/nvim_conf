@@ -71,8 +71,7 @@ vim.api.nvim_set_keymap("n", "q", "t", {
       vim.cmd("quit")
     else
       -- Otherwise, close the current buffer
-      vim.cmd("bw")
-      vim.cmd("blast")
+      vim.cmd("bprevious | bd #")
     end
   end,
 })

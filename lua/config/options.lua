@@ -44,3 +44,7 @@ vim.o.cmdheight = 0
 
 -- word wrap on 120 or edge of window
 vim.opt.wrap = true
+
+-- fold setting
+vim.o.foldmethod = "indent"
+vim.o.foldlevel = 99
