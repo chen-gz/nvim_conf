@@ -6,6 +6,27 @@ return {
 				["rust-analyzer"] = {},
 			},
 		})
+        -- c++ lsp
+        require('lspconfig').clangd.setup({
+            settings = {
+                ['clangd'] = {
+                    -- Enable completion
+                    completion = {
+                        -- Enable completion triggered by <c-x><c-o>
+                        -- You may want to disable this in favor of a different completion
+                        -- trigger, such as <c-n>.
+                        triggerCompletion = true,
+                    },
+                    -- Enable diagnostics
+                    diagnostics = {
+                        -- Enable clangd diagnostics
+                        enabled = true,
+                    },
+                    -- Enable semantic highlighting
+                    semanticHighlighting = true,
+                },
+            },
+        })
 		vim.api.nvim_create_autocmd('LspAttach', {
 			group = vim.api.nvim_create_augroup('UserLspConfig', {}),
 			callback = function(ev)
@@ -29,7 +50,7 @@ return {
 				-- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
 				-- vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
 				-- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-				-- vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, opts)
+				vim.keymap.set('n', '<space>cf', function() vim.lsp.buf.format { async = true } end, opts)
 				-- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 				-- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 

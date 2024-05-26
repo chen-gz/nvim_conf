@@ -48,3 +48,9 @@ vim.opt.wrap = true
 -- fold setting
 vim.o.foldmethod = "indent"
 vim.o.foldlevel = 99
+-- color row
+vim.o.cursorline = true
+vim.o.showbreak = "↪"
+
+-- insert spaces instead of tabs
+vim.o.expandtab = true
