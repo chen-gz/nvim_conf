@@ -10,7 +10,10 @@ return {
 			-- 		vim.fn["vsnip#anonymous"](args.body)
 			-- 	end,
 			-- },
-			mapping = {
+            -- mapping = reqcmp.predef.mapping({
+            -- mapping = cmp.mapping.preset.insert({
+            mapping = require('cmp').mapping.preset.insert({
+			-- mapping = {
 				["<C-n>"] = require('cmp').mapping.select_next_item(),
 				["<C-p>"] = require('cmp').mapping.select_prev_item(),
 				["<C-d>"] = require('cmp').mapping.scroll_docs(-4),
@@ -21,7 +24,7 @@ return {
 					behavior = require('cmp').ConfirmBehavior.Insert,
 					select = true,
 				},
-			},
+			}),
 			sources = {
 				{ name = 'nvim_lsp' },
 				{ name = 'vsnip' },
