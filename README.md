@@ -2,6 +2,14 @@
 
 Welcome to my Neovim configuration repository! This setup is designed to enhance the Neovim experience by incorporating various plugins for improved functionality, a better user interface, and powerful development tools. The goal is to make Neovim an efficient and robust code editor. Therefore, only essential plugins and key mappings have been carefully selected and configured.
 
+## Installation
+
+To install this configuration, clone the repository to your Neovim configuration directory:
+
+```bash
+git clone https://github.com/chen-gz/nvim_conf.git ~/.config/nvim
+```
+
 ## Plugins
 
 Here is a list of the plugins I use along with a brief description of each:
@@ -66,13 +74,6 @@ Here is a list of the plugins I use along with a brief description of each:
 20. **toggleterm.lua**
     - A terminal management plugin for Neovim, allowing you to toggle terminals easily.
 
-## Installation
-
-To install this configuration, clone the repository to your Neovim configuration directory:
-
-```bash
-git clone https://github.com/chen-gz/nvim_conf.git ~/.config/nvim
-```
 
 ## License
 
